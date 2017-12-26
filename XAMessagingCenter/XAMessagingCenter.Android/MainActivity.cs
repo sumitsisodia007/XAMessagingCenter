@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
+using Xamarin.Forms;
 
 namespace XAMessagingCenter.Droid
 {
@@ -21,6 +23,12 @@ namespace XAMessagingCenter.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            MessagingCenter.Subscribe<Start>(this, "Start", start =>
+            {
+                StartService(new Intent(this, typeof(PeriodicService)));
+            });
+            
         }
     }
 }

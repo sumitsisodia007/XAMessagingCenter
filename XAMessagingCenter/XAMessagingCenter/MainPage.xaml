@@ -6,8 +6,12 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                   x:Name="label"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="start"
+                    Text="Start"
+                    Clicked="start_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
